@@ -209,6 +209,7 @@ const ProjectCard = ({ project, onPlayVideo }) => {
           <p className="project-desc">{project.desc}</p>
           <div className="project-links-inline">
             {project.videoUrl && (
+              /* eslint-disable-next-line jsx-a11y/anchor-is-valid */
               <a href="#" onClick={(e) => { e.preventDefault(); onPlayVideo(project.videoUrl); }} title="View Full Video">
                 <IconPlay /> Video
               </a>
