@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import TiltCard from './TiltCard';
 
@@ -82,6 +82,22 @@ const IconPlay = () => (
 const ProjectCard = ({ project, onPlayVideo }) => {
   const [currentImg, setCurrentImg] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const videoRef = useRef(null);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    if (project.videoUrl && videoRef.current) {
+      videoRef.current.play().catch(err => console.log("Autoplay blocked", err));
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    if (project.videoUrl && videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  };
 
   const nextImg = (e) => {
     e.stopPropagation();
@@ -94,7 +110,7 @@ const ProjectCard = ({ project, onPlayVideo }) => {
   };
 
   const hasGallery = (project.mediaType === 'gallery' || project.mediaType === 'image') && project.images?.length > 1;
-  const showVideoPreview = project.videoUrl && isHovered;
+  const hasVideo = !!project.videoUrl;
 
   return (
     <TiltCard className="project-card-wrapper">
@@ -105,20 +121,28 @@ const ProjectCard = ({ project, onPlayVideo }) => {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
         whileHover={{ y: -5 }}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
-        <div className={`project-image-wrapper ${showVideoPreview ? 'video-active' : ''}`}>
-          {showVideoPreview ? (
-            <video 
-              src={project.videoUrl} 
-              autoPlay 
-              muted 
-              loop 
-              playsInline
-              onVolumeChange={(e) => e.target.muted = true}
-              className="project-image"
-            />
+        <div className={`project-image-wrapper ${isHovered && hasVideo ? 'video-active' : ''}`}>
+          {hasVideo ? (
+            <>
+              <video 
+                ref={videoRef}
+                src={project.videoUrl} 
+                muted 
+                loop 
+                playsInline
+                className={`project-image video-element ${isHovered ? 'visible' : 'hidden'}`}
+              />
+              {!isHovered && (
+                <img 
+                  src={project.images?.[0] || project.img} 
+                  alt={project.name} 
+                  className="project-image placeholder-image" 
+                />
+              )}
+            </>
           ) : (
             <img 
               src={hasGallery ? project.images[currentImg] : (project.img || project.images?.[0])} 
@@ -127,7 +151,7 @@ const ProjectCard = ({ project, onPlayVideo }) => {
             />
           )}
 
-          {hasGallery && !showVideoPreview && (
+          {hasGallery && !hasVideo && (
             <div className="gallery-controls">
               <button className="gallery-btn prev" onClick={prevImg}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>

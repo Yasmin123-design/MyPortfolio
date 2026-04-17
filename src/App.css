@@ -277,6 +277,8 @@ section {
   opacity: 0;
   transition: var(--transition-smooth);
   backdrop-filter: blur(4px);
+  z-index: 5;
+  pointer-events: none; /* Crucial: let clicks pass through to gallery buttons */
 }
 
 .project-actions {
@@ -287,6 +289,7 @@ section {
   transform: translateY(20px);
   transition: var(--transition-smooth);
   padding: 0 1rem;
+  pointer-events: auto; /* Enable clicks for Github/Demo links */
 }
 
 .project-card:hover .project-overlay {
@@ -297,7 +300,6 @@ section {
 .project-image-wrapper:has(.gallery-btn:hover) .project-overlay,
 .project-image-wrapper:has(.gallery-dots:hover) .project-overlay {
   opacity: 0;
-  pointer-events: none;
 }
 
 .project-card:hover .project-actions {
@@ -305,9 +307,19 @@ section {
 }
 
 .project-image-wrapper.video-active .project-overlay {
+  opacity: 0;
   background: transparent;
   backdrop-filter: none;
+  pointer-events: none;
 }
+
+.video-element {
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.video-element.hidden { opacity: 0; }
+.video-element.visible { opacity: 1; }
 
 /* 3D Container Styles */
 .canvas-container {
