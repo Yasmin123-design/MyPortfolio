@@ -127,6 +127,12 @@ const ProjectCard = ({ project, onPlayVideo }) => {
         <div className={`project-image-wrapper ${isHovered && hasVideo ? 'video-active' : ''}`}>
           {hasVideo ? (
             <>
+              <img 
+                src={project.images?.[0] || project.img} 
+                alt={project.name} 
+                className={`project-image placeholder-image`} 
+                style={{ position: 'absolute', top: 0, left: 0, zIndex: 1, opacity: isHovered ? 0 : 1, transition: 'opacity 0.5s ease' }}
+              />
               <video 
                 ref={videoRef}
                 src={project.videoUrl} 
@@ -134,14 +140,8 @@ const ProjectCard = ({ project, onPlayVideo }) => {
                 loop 
                 playsInline
                 className={`project-image video-element ${isHovered ? 'visible' : 'hidden'}`}
+                style={{ position: 'absolute', top: 0, left: 0, zIndex: 2 }}
               />
-              {!isHovered && (
-                <img 
-                  src={project.images?.[0] || project.img} 
-                  alt={project.name} 
-                  className="project-image placeholder-image" 
-                />
-              )}
             </>
           ) : (
             <img 
