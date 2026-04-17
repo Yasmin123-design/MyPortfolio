@@ -5,7 +5,7 @@ const Competencies = () => {
   const skills = [
     {
       title: "Web & Frontend",
-      items: ["Angular, React.js, Next.js", "TS, ES.Next, HTML, CSS, JS", "Bootstrap, Jquery", "DS & Algorithm"],
+      items: ["Angular, React.js, Next.js", "TS, ES.Next, HTML, CSS, JS", "Bootstrap, Jquery, SASS", "OOP, DS & Algorithm"],
       icon: "🎨"
     },
     {

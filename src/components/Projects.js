@@ -207,7 +207,28 @@ const ProjectCard = ({ project, onPlayVideo }) => {
           <span className="project-tag">{project.tag}</span>
           <h3 className="project-name">{project.name}</h3>
           <p className="project-desc">{project.desc}</p>
-          
+          <div className="project-links-inline">
+            {project.videoUrl && (
+              <a href="#" onClick={(e) => { e.preventDefault(); onPlayVideo(project.videoUrl); }} title="View Full Video">
+                <IconPlay /> Video
+              </a>
+            )}
+            {project.links.github && (
+              <a href={project.links.github} target="_blank" rel="noreferrer" title="Source Code">
+                <IconGithub /> GitHub
+              </a>
+            )}
+            {project.links.githubFront && (
+              <a href={project.links.githubFront} target="_blank" rel="noreferrer" title="Frontend Repo">
+                <IconGithub /> Frontend
+              </a>
+            )}
+            {project.links.githubBack && (
+              <a href={project.links.githubBack} target="_blank" rel="noreferrer" title="Backend Repo">
+                <IconGithub /> Backend
+              </a>
+            )}
+          </div>
         </div>
       </motion.div>
     </TiltCard>

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import avatar from '../assets/yasmin.jpeg';
 import Hero3D from './Hero3D';
 import Magnetic from './Magnetic';
+import cvFile from '../assets/FullstackDeveloper_YasminElabasi.pdf';
 
 const Hero = () => {
   return (
@@ -56,7 +57,7 @@ const Hero = () => {
         >
           "Full-Stack Developer focused on building scalable and high-performance web applications. Experienced across modern frontend frameworks (Angular, React.js, Next.js) and backend technologies (Node.js, Express.js, Nest.js, ASP.NET Core). 
         </motion.p>
-        <div style={{ marginTop: '2rem' }}>
+        <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <Magnetic>
             <motion.a 
               href="#work" 
@@ -69,6 +70,22 @@ const Hero = () => {
             >
               View Work 
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </motion.a>
+          </Magnetic>
+          <Magnetic>
+            <motion.a 
+              href={cvFile} 
+              target="_blank"
+              download="FullstackDeveloper_YasminElabasi.pdf"
+              className="btn-secondary"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.1 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Download CV 
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
             </motion.a>
           </Magnetic>
         </div>
