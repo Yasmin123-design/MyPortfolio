@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import TiltCard from './TiltCard';
-import { SiAngular, SiDotnet, SiJsonwebtokens, SiReact, SiStripe, SiPostgresql, SiRedis, SiNestjs, SiBlazor, SiNodedotjs, SiMongodb, SiSocketdotio, SiOpenai, SiGraphql, SiRabbitmq, SiElasticsearch, SiHtml5, SiCss, SiBootstrap } from 'react-icons/si';
-import { FaDatabase, FaKey } from 'react-icons/fa';
+import { SiAngular, SiDotnet, SiJsonwebtokens, SiReact, SiStripe, SiPostgresql, SiRedis, SiNestjs, SiBlazor, SiNodedotjs, SiMongodb, SiSocketdotio, SiGraphql, SiRabbitmq, SiElasticsearch, SiHtml5, SiCss, SiBootstrap } from 'react-icons/si';
+import { FaDatabase } from 'react-icons/fa';
 
 import p2 from '../assets/project2.png';
 import p3 from '../assets/project3.png';
