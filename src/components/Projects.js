@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import TiltCard from './TiltCard';
+import { SiAngular, SiDotnet, SiJsonwebtokens, SiReact, SiStripe, SiPostgresql, SiRedis, SiNestjs, SiBlazor, SiNodedotjs, SiMongodb, SiSocketdotio, SiOpenai, SiGraphql, SiRabbitmq, SiElasticsearch, SiHtml5, SiCss, SiBootstrap } from 'react-icons/si';
+import { FaDatabase, FaKey } from 'react-icons/fa';
 
 import p2 from '../assets/project2.png';
 import p3 from '../assets/project3.png';
@@ -207,6 +209,17 @@ const ProjectCard = ({ project, onPlayVideo }) => {
           <span className="project-tag">{project.tag}</span>
           <h3 className="project-name">{project.name}</h3>
           <p className="project-desc">{project.desc}</p>
+          {project.tech && (
+            <div className="project-tech-stack" style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '15px' }}>
+              {project.tech.map((t, index) => (
+                <div key={index} title={t.name} style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '11px', background: 'rgba(255,255,255,0.05)', padding: '4px 8px', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                  {t.icon}
+                  <span>{t.name}</span>
+                </div>
+              ))}
+            </div>
+          )}
+
           <div className="project-links-inline">
             {project.videoUrl && (
               /* eslint-disable-next-line jsx-a11y/anchor-is-valid */
@@ -247,6 +260,11 @@ const Projects = () => {
       desc: "Built a crowdfunding platform using Angular & ASP.NET Core (Clean Architecture), supporting campaign management and role-based JWT authentication.",
       mediaType: "gallery",
       images: [cr1, cr3, cr4, cr5, cr6, cr7, cr8, cr9, cr10, cr11, cr12, cr13, cr14, cr15, cr16, cr17, cr18, cr19, cr20, cr21],
+      tech: [
+        { name: "Angular", icon: <SiAngular color="#DD0031" /> },
+        { name: "ASP.NET Core", icon: <SiDotnet color="#512BD4" /> },
+        { name: "JWT", icon: <SiJsonwebtokens color="#000000" /> }
+      ],
       links: {
         githubFront: "https://github.com/Yasmin123-design/CrowdFunding_FrontendAngular.git",
         githubBack: "https://github.com/Yasmin123-design/CrowdFunding_BackendAsp.NetCore.git"
@@ -259,6 +277,11 @@ const Projects = () => {
       mediaType: "video",
       images:[p2],
       videoUrl: v1,
+      tech: [
+        { name: ".NET 8", icon: <SiDotnet color="#512BD4" /> },
+        { name: "SQL Server", icon: <FaDatabase color="#CC292B" /> }
+
+      ],
       links: {
         github: "https://github.com/Yasmin123-design/Healing_Asp.NetCore.git"
       }
@@ -270,73 +293,110 @@ const Projects = () => {
       mediaType: "video",
       images:[p3],
       videoUrl: v2,
+      tech: [
+        { name: "ASP.NET Core", icon: <SiDotnet color="#512BD4" /> },
+        { name: "SQL Server", icon: <FaDatabase color="#CC292B" /> }
+      ],
       links: {
         github: "https://github.com/Yasmin123-design/ECommerece_DEPI.git"
       }
     },
     {
-  name: "Social Media Platform (Microservices)",
-  tag: "SOCIAL MEDIA",
-  desc: "Scalable .NET microservices platform with RabbitMQ for event-driven communication and Elasticsearch for optimized search. Frontend built with Angular and NgRx for real-time state management.",
-  mediaType: "gallery",
-  images: [s1, s2, s3, s4, s5, s6, s7, s8, s9],
-  links: {
-    githubBack: "https://github.com/Yasmin123-design/SocialMediaApp_Asp.NetCoreBackend.git",
-    githubFront:"https://github.com/Yasmin123-design/SocialMediaApp_FrontendAngular.git"
-  }
-},
-{
-  name: "Learning Management System (LMS)",
-  tag: "EDTECH",
-  desc: "Full-stack LMS built with React and Next.js. Features Stripe payments, OAuth (Google/LinkedIn), and automated certificate generation with a scalable PostgreSQL and Redis backend.",
-  mediaType: "gallery",
-  images: [l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12],
-  links: {
-    githubBack: "https://github.com/Yasmin123-design/LearningManagementSystem_NestJS.git",
-    githubFront:"https://github.com/Yasmin123-design/CrowdFunding_FrontendAngular.git"
-  }
-},
-{
-  name: "School Management System",
-  tag: "EDUCATION",
-  desc: "A Blazor-based system with role-based access for Admins, Teachers, and Students. Features interactive dashboards for managing academic records and real-time data updates.",
-  mediaType: "video",
-  images:[p4],
-  videoUrl: v3,
-  links: {
-    github: "https://github.com/Yasmin123-design/MySchool_Blazor.git"
-  }
-},
-{
-  name: "Restaurant Management System",
-  tag: "BACKEND",
-  desc: "Scalable backend built with Node.js and MongoDB, featuring JWT authentication, real-time notifications via Socket.io, and automated inventory management.",
-  mediaType: "image",
-  images: [p5,re1,re2,re3,re4,re5],
-  links: {
-    github: "https://github.com/Yasmin123-design/RestaurantManagementSystem_NodeJs.git"
-  }
-},
-{
-  name: "AI Resume Analyzer & Job Matcher",
-  tag: "AI / BACKEND",
-  desc: "AI-powered tool using OpenAI for semantic resume matching. Features LinkedIn OAuth, background job processing with Redis, and a real-time analytics dashboard.",
-  mediaType: "image",
-  images: [p6,ai1,ai2,ai3],
-  links: {
-    github: "https://github.com/Yasmin123-design/AIReasumeAnalyzer_NodeJs.git"
-  }
-},
-{
-  name: "Fitness Tracker API",
-  tag: "BACKEND / GRAPHQL",
-  desc: "ASP.NET GraphQL API built with Clean Architecture. Supports efficient querying and full CRUD operations for workout tracking with Repository and Unit of Work patterns.",
-  mediaType: "image",
-  images: [p7,fit1],
-  links: {
-    github: "https://github.com/Yasmin123-design/FitnessTracker_GraphQL.git"
-  }
-}
+      name: "Social Media Platform (Microservices)",
+      tag: "SOCIAL MEDIA",
+      desc: "Scalable .NET microservices platform with RabbitMQ for event-driven communication and Elasticsearch for optimized search. Frontend built with Angular and NgRx for real-time state management.",
+      mediaType: "gallery",
+      images: [s1, s2, s3, s4, s5, s6, s7, s8, s9],
+      tech: [
+        { name: ".NET", icon: <SiDotnet color="#512BD4" /> },
+        { name: "RabbitMQ", icon: <SiRabbitmq color="#FF6600" /> },
+        { name: "Elasticsearch", icon: <SiElasticsearch color="#005571" /> },
+        { name: "Angular", icon: <SiAngular color="#DD0031" /> }
+      ],
+      links: {
+        githubBack: "https://github.com/Yasmin123-design/SocialMediaApp_Asp.NetCoreBackend.git",
+        githubFront:"https://github.com/Yasmin123-design/SocialMediaApp_FrontendAngular.git"
+      }
+    },
+    {
+      name: "Learning Management System (LMS)",
+      tag: "EDTECH",
+      desc: "Full-stack LMS built with React. Features Stripe payments, OAuth (Google/LinkedIn), and automated certificate generation with a scalable PostgreSQL and Redis backend.",
+      mediaType: "gallery",
+      images: [l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12],
+      tech: [
+        { name: "React", icon: <SiReact color="#61DAFB" /> },
+        { name: "Stripe", icon: <SiStripe color="#008CDD" /> },
+        { name: "PostgreSQL", icon: <SiPostgresql color="#4169E1" /> },
+        { name: "Redis", icon: <SiRedis color="#DC382D" /> },
+        { name: "NestJS", icon: <SiNestjs color="#E0234E" /> }
+      ],
+      links: {
+        githubBack: "https://github.com/Yasmin123-design/LearningManagementSystem_NestJS.git",
+        githubFront:"https://github.com/Yasmin123-design/CrowdFunding_FrontendAngular.git"
+      }
+    },
+    {
+      name: "School Management System",
+      tag: "EDUCATION",
+      desc: "A Blazor-based system with role-based access for Admins, Teachers, and Students. Features interactive dashboards for managing academic records and real-time data updates.",
+      mediaType: "video",
+      images:[p4],
+      videoUrl: v3,
+      tech: [
+        { name: "Blazor", icon: <SiBlazor color="#512BD4" /> },
+        { name: "HTML5", icon: <SiHtml5 color="#E34F26" /> },
+        { name: "CSS", icon: <SiCss color="#1572B6" /> },
+        { name: "Bootstrap", icon: <SiBootstrap color="#7952B3" /> }
+      ],
+      links: {
+        github: "https://github.com/Yasmin123-design/MySchool_Blazor.git"
+      }
+    },
+    {
+      name: "Restaurant Management System",
+      tag: "BACKEND",
+      desc: "Scalable backend built with Node.js and MongoDB, featuring JWT authentication, real-time notifications via Socket.io, and automated inventory management.",
+      mediaType: "image",
+      images: [p5,re1,re2,re3,re4,re5],
+      tech: [
+        { name: "Node.js", icon: <SiNodedotjs color="#339933" /> },
+        { name: "MongoDB", icon: <SiMongodb color="#47A248" /> },
+        { name: "Socket.io", icon: <SiSocketdotio color="#fff" /> }
+            ],
+      links: {
+        github: "https://github.com/Yasmin123-design/RestaurantManagementSystem_NodeJs.git"
+      }
+    },
+    {
+      name: "AI Resume Analyzer & Job Matcher",
+      tag: "AI / BACKEND",
+      desc: "AI-powered tool using OpenAI for semantic resume matching. Features LinkedIn OAuth, background job processing with Redis, and a real-time analytics dashboard.",
+      mediaType: "image",
+      images: [p6,ai1,ai2,ai3],
+      tech: [
+        { name: "Node.js", icon: <SiNodedotjs color="#339933" /> },
+        { name: "MongoDB", icon: <SiMongodb color="#47A248" /> },
+        { name: "Redis", icon: <SiRedis color="#DC382D" /> }
+      ],
+      links: {
+        github: "https://github.com/Yasmin123-design/AIReasumeAnalyzer_NodeJs.git"
+      }
+    },
+    {
+      name: "Fitness Tracker API",
+      tag: "BACKEND / GRAPHQL",
+      desc: "ASP.NET GraphQL API built with Clean Architecture. Supports efficient querying and full CRUD operations for workout tracking with Repository and Unit of Work patterns.",
+      mediaType: "image",
+      images: [p7,fit1],
+      tech: [
+        { name: "ASP.NET Core", icon: <SiDotnet color="#512BD4" /> },
+        { name: "GraphQL", icon: <SiGraphql color="#E10098" /> }
+      ],
+      links: {
+        github: "https://github.com/Yasmin123-design/FitnessTracker_GraphQL.git"
+      }
+    }
   ];
 
   const visibleProjects = showAll ? projects : projects.slice(0, 3);
