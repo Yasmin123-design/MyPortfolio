@@ -54,6 +54,9 @@ import l9 from '../assets/l9.png';
 import l10 from '../assets/l10.png';
 import l11 from '../assets/l11.png';
 import l12 from '../assets/l12.png';
+import l13 from '../assets/q1.png';
+import l14 from '../assets/q2.png';
+import l15 from '../assets/q3.png';
 import v1 from '../assets/healing.mp4';
 import v2 from '../assets/FinalGraduationProjectDEPI.mp4';
 import v3 from '../assets/school.mp4';
@@ -323,7 +326,7 @@ const Projects = () => {
       tag: "EDTECH",
       desc: "Full-stack LMS built with React. Features Stripe payments, OAuth (Google/LinkedIn), and automated certificate generation with a scalable PostgreSQL and Redis backend.",
       mediaType: "gallery",
-      images: [l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12],
+      images: [l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12,l13,l14,l15],
       tech: [
         { name: "React", icon: <SiReact color="#61DAFB" /> },
         { name: "Stripe", icon: <SiStripe color="#008CDD" /> },
