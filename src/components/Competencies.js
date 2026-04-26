@@ -18,6 +18,7 @@ const Competencies = () => {
         { name: "Angular", icon: <SiAngular color="#DD0031" /> },
         { name: "React.js", icon: <SiReact color="#61DAFB" /> },
         { name: "Next.js", icon: <SiNextdotjs color="#fff" /> },
+        { name: "Auth.js", icon: <SiAuth0 color="#eb5424" /> },
         { name: "TypeScript", icon: <SiTypescript color="#3178C6" /> },
         { name: "JavaScript", icon: <SiJavascript color="#F7DF1E" /> },
         { name: "HTML5", icon: <SiHtml5 color="#E34F26" /> },
