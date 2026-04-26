@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { 
   SiAngular, SiReact, SiNextdotjs, SiTypescript, SiJavascript, SiHtml5, SiCss, SiBootstrap, SiJquery, SiSass, SiTailwindcss,
   SiDotnet, SiNodedotjs, SiExpress, SiNestjs, SiMongodb, SiPostgresql, 
-  SiGraphql, SiElasticsearch, SiDocker, SiRabbitmq, SiBlazor
+  SiGraphql, SiElasticsearch, SiDocker, SiRabbitmq, SiBlazor, SiAuth0
 } from 'react-icons/si';
 import { FaDatabase, FaCode, FaCubes, FaServer, FaFlask, FaProjectDiagram, FaBroadcastTower, FaNetworkWired, FaSitemap, FaWindows, FaLayerGroup } from 'react-icons/fa';
 import { TbBrandCSharp } from 'react-icons/tb';
