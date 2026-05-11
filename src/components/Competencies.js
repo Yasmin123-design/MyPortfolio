@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { 
   SiAngular, SiReact, SiNextdotjs, SiTypescript, SiJavascript, SiHtml5, SiCss, SiBootstrap, SiJquery, SiSass, SiTailwindcss,
   SiDotnet, SiNodedotjs, SiExpress, SiNestjs, SiMongodb, SiPostgresql, 
-  SiGraphql, SiElasticsearch, SiDocker, SiRabbitmq, SiBlazor, SiAuth0
+  SiGraphql, SiElasticsearch, SiDocker, SiRabbitmq, SiBlazor, SiAuth0, SiWindows, SiN8n
 } from 'react-icons/si';
 import { FaDatabase, FaCode, FaCubes, FaServer, FaFlask, FaProjectDiagram, FaBroadcastTower, FaNetworkWired, FaSitemap, FaWindows, FaLayerGroup } from 'react-icons/fa';
 import { TbBrandCSharp } from 'react-icons/tb';
@@ -52,7 +52,8 @@ const Competencies = () => {
         { name: "PostgreSQL", icon: <SiPostgresql color="#4169E1" /> },
         { name: "MongoDB", icon: <SiMongodb color="#47A248" /> },
         { name: "GraphQL", icon: <SiGraphql color="#E10098" /> },
-        { name: "Elasticsearch", icon: <SiElasticsearch color="#005571" /> }
+        { name: "Elasticsearch", icon: <SiElasticsearch color="#005571" /> },
+        { name: "n8n", icon: <SiN8n color="#FF6C5F" /> }
       ]
     },
     {
@@ -71,6 +72,14 @@ const Competencies = () => {
         { name: "RabbitMQ", icon: <SiRabbitmq color="#FF6600" /> },
         { name: "IIS", icon: <FaWindows color="#00A4EF" /> },
         { name: "Testing", icon: <FaFlask color="#a8b2d1" /> }
+      ]
+    },
+    {
+      title: "Desktop Development",
+      icon: "🖥️",
+      items: [
+        { name: "Windows Forms", icon: <FaWindows color="#00A4EF" /> },
+        { name: "WPF", icon: <SiWindows color="#0078D6" /> }
       ]
     }
   ];

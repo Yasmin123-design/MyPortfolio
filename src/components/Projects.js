@@ -42,6 +42,31 @@ import s7 from '../assets/s7.png';
 import s8 from '../assets/s8.png';
 import s9 from '../assets/s9.png';
 
+import e1 from '../assets/e1.png';
+import e2 from '../assets/e2.png';
+import e3 from '../assets/e3.png';
+import e4 from '../assets/e4.png';
+import e5 from '../assets/e5.png';
+import e6 from '../assets/e6.png';
+import e7 from '../assets/e7.png';
+import e8 from '../assets/e8.png';
+import e9 from '../assets/e9.png';
+import e10 from '../assets/e10.png';
+import e11 from '../assets/e11.png';
+import e12 from '../assets/e12.png';
+import e13 from '../assets/e13.png';
+import e14 from '../assets/e14.png';
+import e15 from '../assets/e15.png';
+import e16 from '../assets/e16.png';
+import e17 from '../assets/e17.png';
+import e18 from '../assets/e18.png';
+import e19 from '../assets/e19.png';
+import e20 from '../assets/e20.png';
+import e21 from '../assets/e21.png';
+import e22 from '../assets/e22.png';
+import e23 from '../assets/e23.png';
+import e24 from '../assets/e24.png';
+
 import l1 from '../assets/l1.png';
 import l2 from '../assets/l2.png';
 import l3 from '../assets/l3.png';
@@ -297,7 +322,7 @@ const Projects = () => {
       tag: "E-COMMERCE",
       desc: "Built an ASP.NET Core MVC e-commerce platform with SQL Server, supporting 100+ products, shopping cart, orders, and a full admin panel.",
       mediaType: "video",
-      images:[p3],
+      images:[p3,e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11,e12,e13,e14,e15,e16,e17,e18,e19,e20,e21,e22,e23,e24],
       videoUrl: v2,
       tech: [
         { name: "ASP.NET Core", icon: <SiDotnet color="#512BD4" /> },
