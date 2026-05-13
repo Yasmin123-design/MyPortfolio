@@ -48,6 +48,8 @@ const Competencies = () => {
         { name: "Express", icon: <SiExpress color="#fff" /> },
         { name: "Nest.js", icon: <SiNestjs color="#E0234E" /> },
         { name: "Blazor", icon: <SiBlazor color="#512BD4" /> },
+        { name: "Windows Forms", icon: <FaWindows color="#00A4EF" /> },
+        { name: "WPF", icon: <FaWindows color="#0078D6" /> },
         { name: "SQL Server", icon: <FaDatabase color="#CC292B" /> },
         { name: "PostgreSQL", icon: <SiPostgresql color="#4169E1" /> },
         { name: "MongoDB", icon: <SiMongodb color="#47A248" /> },
@@ -72,14 +74,6 @@ const Competencies = () => {
         { name: "RabbitMQ", icon: <SiRabbitmq color="#FF6600" /> },
         { name: "IIS", icon: <FaWindows color="#00A4EF" /> },
         { name: "Testing", icon: <FaFlask color="#a8b2d1" /> }
-      ]
-    },
-    {
-      title: "Desktop Development",
-      icon: "🖥️",
-      items: [
-        { name: "Windows Forms", icon: <FaWindows color="#00A4EF" /> },
-        { name: "WPF", icon: <FaWindows color="#0078D6" /> }
       ]
     }
   ];

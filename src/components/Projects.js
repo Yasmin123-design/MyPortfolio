@@ -100,6 +100,26 @@ import ai2 from '../assets/ai2.png';
 import ai3 from '../assets/ai3.png';
 
 import fit1 from '../assets/fit1.png';
+
+import f1 from '../assets/food1.png';
+import f2 from '../assets/food2.png';
+import f3 from '../assets/food3.png';
+import f4 from '../assets/food4.png';
+import f5 from '../assets/food5.png';
+import f6 from '../assets/food6.png';
+import f7 from '../assets/food7.png';
+import f8 from '../assets/food8.png';
+import f9 from '../assets/food9.png';
+import f10 from '../assets/food10.png';
+import f11 from '../assets/food11.png';
+import f12 from '../assets/food12.png';
+import f13 from '../assets/food13.png';
+import f14 from '../assets/food14.png';
+import f15 from '../assets/food15.png';
+import f16 from '../assets/food16.png';
+import f17 from '../assets/food17.png';
+import f18 from '../assets/food18.png';
+
 const IconGithub = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
 );
@@ -285,6 +305,24 @@ const Projects = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   const projects = [
+    {
+      name: "Online Food Ordering",
+      tag: "FULL STACK",
+      desc: "Online Food Ordering Web Application built using NestJS & React.js, featuring authentication, menu display, cart and order management, online payment & cash on delivery, order tracking, admin dashboard, and Arabic & English language support.",
+      mediaType: "gallery",
+      images: [f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17, f18],
+      tech: [
+        { name: "React", icon: <SiReact color="#61DAFB" /> },
+        { name: "NestJS", icon: <SiNestjs color="#E0234E" /> },
+        { name: "Stripe", icon: <SiStripe color="#008CDD" /> },
+        { name: "PostgreSQL", icon: <SiPostgresql color="#4169E1" /> }
+      ],
+      links: {
+        githubFront: "https://github.com/Yasmin123-design/FoodOrderingApp_ReactJS.git",
+        githubBack: "https://github.com/Yasmin123-design/FoodOrderingApp_NestJS.git",
+        frontend: "https://food-ordering-app-react-js-six.vercel.app/"
+      }
+    },
     {
       name: "CROWDFUNDING PLATFORM",
       tag: "WEB APP",
